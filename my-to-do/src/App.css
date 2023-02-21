@@ -1,0 +1,17 @@
+.ui-app-container{
+    background-color: white;
+    height: 100vh;
+    width: 98vw;
+    padding: 20px
+}
+
+.ui-app-container-todo{
+    background-color: #EDEDED;
+    height: 100vh;
+    width: 30%;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
