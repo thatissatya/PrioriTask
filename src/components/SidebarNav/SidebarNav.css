@@ -1,0 +1,212 @@
+.ui-sidebar-nav{
+    width: 240px;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-right: 0.1px solid #87879c;
+}
+
+.ui-menu-button{
+    display: none;
+}
+
+.ui-sidebar-nav__profile{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+
+.ui-sidebar-nav__profile__left{
+    margin-right: 15px;
+
+}
+/* not complete yet */
+.ui-sidebar-nav__profile__left__cover{
+    border-radius: 100%;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(270deg, black 50%, transparent 50%), linear-gradient(0deg, black 50%, lightgray 50%);
+    display: flex;
+    clip: rect(0px, 60px, 60px, 30px);
+}
+
+.ui-sidebar-nav__profile__left__cover__image{
+    margin: auto;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.ui-sidebar-nav__profile__right{
+    display: flex;
+    flex-direction: column;
+}
+.ui-sidebar-nav__profile__right__name{
+    font-size: 15px;
+}
+.ui-sidebar-nav__profile__right__username{
+    font-size: 12px;
+    color: #87879c;
+}
+
+.ui-sidebar-nav__navs{
+    margin-top: 20%;
+    width: calc(100% - 10%);
+    margin-right: 10%;
+    color: #87879c;
+}
+
+.ui-sidebar-nav__navs__item{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 10% 0 10%;
+    position: relative;
+}
+
+
+.ui-sidebar-nav__navs__item--select{
+    /* padding-left: 0px; */
+    color: #f13983;
+}
+
+.ui-sidebar-nav__navs__item__arrow{
+    top: 8px;
+    position: absolute;
+    background-color: #f13983;
+    height: 20px;
+    width: 20px;
+    left: -10px;
+    rotate: 45deg;
+}
+
+.ui-sidebar-nav__navs__item__main{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.ui-sidebar-nav__navs__item__main__icon{
+    margin-right: 10px;
+}
+
+.ui-sidebar-nav__navs__item__main__name{
+    font-size: 15px;
+}
+
+.ui-sidebar-nav__navs__item__main__count, .ui-sidebar-nav__navs__item__main__extends{
+    margin-left: auto;
+    margin-right: 10%;
+}
+
+.ui-sidebar-nav__navs__item__main__count{
+    font-size: 11px;
+    background-color: #eabc47;
+    border-radius: 50%;
+    padding: 5px 8px;
+    text-align: center;
+}
+
+
+.ui-sidebar-nav__navs__item__parts{
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-bottom: 10px;
+}
+
+.ui-sidebar-nav__navs__item__parts__part{
+    position: relative;
+}
+
+.ui-sidebar-nav__navs__item__parts__part__name::before{
+    content: '';
+    border-left: 2px solid #87879c;
+    border-bottom-left-radius: 10px;
+    border-bottom: 2px solid #87879c;
+    width: 10px;
+    height: 30px;
+    top: -18px;
+    left: 5px;
+    position: absolute;
+}
+
+.ui-sidebar-nav__navs__item__parts__part__name{
+    font-size: 13px;
+    padding: 7px 10px;
+    width: fit-content;
+    margin-left: 16px;
+    color: #87879c;
+}
+
+.ui-sidebar-nav__navs__item__parts__part--selected > .ui-sidebar-nav__navs__item__parts__part__name::before{
+    border-color: #f13983;
+    z-index: 7;
+}
+
+.ui-sidebar-nav__navs__item__parts__part:not(:first-child)> .ui-sidebar-nav__navs__item__parts__part__name::before{
+    z-index: -7;
+    height: 36px;
+    top: -22px;
+}
+
+.ui-sidebar-nav__navs__item__parts__part--selected > .ui-sidebar-nav__navs__item__parts__part__name{
+    border-radius: 5px;
+    color: #f13983;
+    background: #f1398355;
+}
+.ui-sidebar-nav__create{
+    margin: 0 5%;
+    margin-top: auto;
+    width: calc(100% - 10%);
+}
+.ui-sidebar-nav__create__avater {
+ height: 150px;
+ width: 150px;
+ margin: 0 auto;
+}
+.ui-sidebar-nav__create__avater > img{
+    height: inherit;
+    width: inherit;
+}
+.ui-sidebar-nav__create__wrapper{
+    text-align: center;
+    background-color: #302945;
+    padding: 10% 15%;
+    border-radius: 12px;
+    /* margin: 0px 10%; */
+    position: relative;
+    top: -20px;
+}
+.ui-sidebar-nav__create__wrapper__descrption{
+    font-size: 18px;
+}
+.ui-sidebar-nav__create__wrapper__btn{
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: #f13983;
+    border-radius: 20px;
+}
+
+@media (max-width: 768px){
+    .ui-sidebar-nav{
+        display: none;
+    }
+    .ui-sidebar-nav--open{
+        display: flex;
+    }
+    .ui-menu-button{
+        display: block;
+        margin-top: 20px;
+        margin-left: 20px;
+        color: #fff;
+    }
+    .ui-menu-button--close{
+        display: none;
+    }
+}
