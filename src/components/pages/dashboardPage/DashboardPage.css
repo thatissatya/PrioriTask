@@ -1,0 +1,10 @@
+.ui-dashboard-page{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+.ui-dashboard-page-logout-btn button{
+    height: 60px;
+    background-color: purple;
+    color: yellow;
+}
