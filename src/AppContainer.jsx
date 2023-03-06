@@ -4,17 +4,17 @@ import { App } from './App'
 
 const _AppContainer = () => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(null)
+    const [user, setUser] = useState(null)
 
 
     // Monitor auth state
     const monitorAuthState = async () => {
         onAuthStateChanged(auth, user => {
             if (user) {
-                setIsLoggedIn(user)
+                setUser(user)
             }
             else {
-                setIsLoggedIn(null)
+                setUser(null)
             }
         })
     }
@@ -22,7 +22,7 @@ const _AppContainer = () => {
         monitorAuthState()
     },[])
     return (
-        <App isLoggedIn={isLoggedIn}/>
+        <App user={user} />
     )
 }
 

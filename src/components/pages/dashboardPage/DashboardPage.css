@@ -1,9 +1,17 @@
 .ui-dashboard-page{
     display: flex;
     justify-content: space-between;
-    height: 100vh;
+    flex-direction: column;
+    height: 100%;
 }
-.ui-dashboard-page-logout-btn button{
+
+.ui-dashboard-page-body{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.ui-dashboard-page-body-logout-btn button{
     height: 60px;
     background-color: purple;
     color: yellow;

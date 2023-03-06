@@ -1,5 +1,40 @@
 .ui-header{
-    width: 100vw;
-    height: 60px;
-    background-color: black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* height: 60px; */
+    background: linear-gradient(
+        101.16deg,
+        rgba(36, 33, 54, 0.98) 7.51%,
+        rgba(41, 56, 76, 0.98) 38.69%,
+        rgba(41, 56, 76, 0.98) 57.03%,
+        rgba(42, 38, 64, 0.98) 83.13%
+      );
 }
+.ui-header-logo img{
+    height: 35px;
+}
+.ui-header-right-navigation{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+.ui-header-right-navigation-profile-picture img{
+    border-radius: 50%;
+    height: 45px;
+}
+
+input[type='text']{
+    color: #9097A8;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 1px solid #5D5F71;
+    border-radius: 50px;
+    background-color: rgba(42, 38, 64, 0.98);
+}
+::placeholder {
+    color: #9097A8;
+    opacity: 0.8; /* Firefox */
+  }

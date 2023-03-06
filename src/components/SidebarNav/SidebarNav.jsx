@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import "./SidebarNav.css";
 import createTask from "../../../public/assets/createTask.svg";
 
-export const SidebarNav = () => {
-  const [navigations, setNavigations] = useState([
+export const SidebarNav = (props) => {
+  const [navigation, setNavigation] = useState([
     {
       id: "dashboard",
       title: "Dashboard",
@@ -58,13 +58,13 @@ export const SidebarNav = () => {
   const navRef = useRef(null)
   const [openSidebar, isOpenSidebar] = useState(false);
 
-  const [selectedNav, setSelectedNav] = useState(navigations[0].id);
+  const [selectedNav, setSelectedNav] = useState(navigation[0].id);
   const [selectedSubNav, setSelectedSubNav] = useState(null);
 
   const userProfile = {
     userId: "",
     name: "Comeron Williamson",
-    profileUrl:
+    profileURL:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     username: "xComeron_88",
   };
@@ -86,11 +86,11 @@ export const SidebarNav = () => {
     };
   }, [navRef, openSidebar]);
 
-  const onToggerSubPart = ({id}) =>{
-    const localNavigations = structuredClone(navigations);
-    const navigationidx = navigations.findIndex((nav) => nav.id === id);
-    localNavigations[navigationidx].open = !navigations[navigationidx].open;
-    setNavigations(localNavigations);
+  const onToggleSubPart = ({id}) =>{
+    const localNavigation = structuredClone(navigation);
+    const navigationIndex = navigation.findIndex((nav) => nav.id === id);
+    localNavigation[navigationIndex].open = !navigation[navigationIndex].open;
+    setNavigation(localNavigation);
 
   }
 
@@ -113,65 +113,65 @@ export const SidebarNav = () => {
           <div className="ui-sidebar-nav__profile__left__cover">
             <img
               className={"ui-sidebar-nav__profile__left__cover__image "} 
-              src={userProfile.profileUrl}
-              alt="profileurl"
+              src={props.user.photoURL}
+              alt="N/A"
             />
           </div>
           
         </div>
         <div className="ui-sidebar-nav__profile__right">
           <div className="ui-sidebar-nav__profile__right__name">
-            {userProfile.name}
+            {props.user.displayName}
           </div>
           <div className="ui-sidebar-nav__profile__right__username">
-            {userProfile.username}
+            {props.user.email}
           </div>
         </div>
       </div>
-      <div className="ui-sidebar-nav__navs">
-        {navigations.map((navigation) => {
+      <div className="ui-sidebar-nav__navigation">
+        {navigation.map((navigation) => {
           const isActive = navigation.id === selectedNav;
-          const itemClassName = (isActive ? 'ui-sidebar-nav__navs__item--select ' : '') + 'ui-sidebar-nav__navs__item';
+          const itemClassName = (isActive ? 'ui-sidebar-nav__navigation__item--select ' : '') + 'ui-sidebar-nav__navigation__item';
           return (
           <div className={itemClassName} key={navigation.id}>
-            {isActive && <div className="ui-sidebar-nav__navs__item__arrow">
+            {isActive && <div className="ui-sidebar-nav__navigation__item__arrow">
               
               </div>}
-            <div className="ui-sidebar-nav__navs__item__main" role='button' tabIndex={'0'} onClick={()=> {
+            <div className="ui-sidebar-nav__navigation__item__main" role='button' tabIndex={'0'} onClick={()=> {
               setSelectedNav(navigation.id);
               setSelectedSubNav(null);
             }
             }>
-              <div className="ui-sidebar-nav__navs__item__main__icon">
+              <div className="ui-sidebar-nav__navigation__item__main__icon">
                 <i className="fa-users"></i>
               </div>
-              <div className="ui-sidebar-nav__navs__item__main__name">
+              <div className="ui-sidebar-nav__navigation__item__main__name">
                 {navigation.title}
               </div>
               {!isEmpty(navigation.count) && (
-                <div className="ui-sidebar-nav__navs__item__main__count">
+                <div className="ui-sidebar-nav__navigation__item__main__count">
                   {navigation.count}
                 </div>
               )}
               {!isEmpty(navigation.children) && (
-                <div className="ui-sidebar-nav__navs__item__main__extends" role='button' tabIndex={'0'} onClick={() => onToggerSubPart({id : navigation.id})} >
+                <div className="ui-sidebar-nav__navigation__item__main__extends" role='button' tabIndex={'0'} onClick={() => onToggleSubPart({id : navigation.id})} >
                   {navigation.open ? <i className="fa-angle-up"></i> : <i className="fa-angle-down"></i> }
                 </div>
               )}
             </div>
             {}
             {!isEmpty(navigation.children) && navigation.open && (
-              <div className="ui-sidebar-nav__navs__item__parts">
+              <div className="ui-sidebar-nav__navigation__item__parts">
                 {navigation.children.map((subPart) =>{
                   const isSubPartSelected = selectedSubNav === subPart.id;
-                  const subPartClassName = (isSubPartSelected ? 'ui-sidebar-nav__navs__item__parts__part--selected ' : '') + 'ui-sidebar-nav__navs__item__parts__part';
+                  const subPartClassName = (isSubPartSelected ? 'ui-sidebar-nav__navigation__item__parts__part--selected ' : '') + 'ui-sidebar-nav__navigation__item__parts__part';
                   return (
                     <div
                       className={subPartClassName}
                       key={subPart.id}
                     >
-                      {/* <div className="ui-sidebar-nav__navs__item__parts__part__step"></div> */}
-                      <div className="ui-sidebar-nav__navs__item__parts__part__name" 
+                      {/* <div className="ui-sidebar-nav__navigation__item__parts__part__step"></div> */}
+                      <div className="ui-sidebar-nav__navigation__item__parts__part__name" 
                       role='button'
                       tabIndex={'0'}
                       onClick={(()=>{
@@ -192,11 +192,11 @@ export const SidebarNav = () => {
                 })}
       </div>
       <div className="ui-sidebar-nav__create">
-        <div className="ui-sidebar-nav__create__avater">
+        <div className="ui-sidebar-nav__create__avatar">
           <img src={createTask} alt="createTask" />
         </div>
         <div className="ui-sidebar-nav__create__wrapper">
-              <div className="ui-sidebar-nav__create__wrapper__descrption"
+              <div className="ui-sidebar-nav__create__wrapper__description"
               >
                 Don't have any new task?
               </div>
@@ -207,7 +207,7 @@ export const SidebarNav = () => {
       </div>
       </div>
       <div className={"ui-menu-button " + (openSidebar? 'ui-menu-button--close' : '' )} role={'button'} tabIndex={'0'} onClick={()=>isOpenSidebar(true)}>
-        <i class="fa fa-bars"></i>
+        <i className="fa fa-bars"></i>
       </div>
     </>
     
