@@ -8,7 +8,7 @@ const _App = (props)=> {
     return (
         <div className="ui-app">
             {
-                props.isLoggedIn ? <DashboardPage /> : <LoginPage />
+                props.user ? <DashboardPage {...props}/> : <LoginPage />
             }
         </div>
     )
