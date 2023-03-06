@@ -1,0 +1,67 @@
+.ui-card-task{
+    margin-left: 15px;
+    width: 250px;
+    background-color: #38465f;
+    padding: 20px 18px;
+    border-radius: 12px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+}
+.ui-card-task-header{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    position: relative;
+}
+.ui-card-task-header__tagStatus{
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.ui-card-task-header__tagName{
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #87879c;
+}
+.ui-card-task-header__more{
+    margin-left: auto;
+    position: absolute;
+    right: 0;
+    top: -7px;
+
+}
+.ui-card-task-body{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 5px; */
+}
+.ui-card-task-body__title{
+    font-size: 18px;
+    /* letter-spacing: 0.5px; */
+    font-weight: 400;
+}
+.ui-card-task-body__image{
+    margin-top: 10px;
+}
+.ui-card-task-body__due{
+    margin-top: 20px;
+}
+.ui-card-task-body__due__icon{}
+.ui-card-task-body__due__text{}
+.ui-card-task-body__status{
+    margin-top: 20px;
+    font-size: 12px;
+    color: #87879c;
+}
+.ui-card-task-body__members{
+    margin-top: 8px;
+    width: 30%;
+    height: 20px;
+    background-color: rgba(128, 192, 65, 0.259);
+}
+.ui-card-task-footer{}

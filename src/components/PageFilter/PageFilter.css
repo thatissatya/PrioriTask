@@ -53,9 +53,9 @@
     margin-right: 8px;
 }
 .ui-page-filter__right__actions__action__icon{
-    width: 10px;
+    /* width: 10px;
     height: 10px;
-    background: #fff;
+    background: #fff; */
 }
 .ui-page-filter__right__actions__action__name{
     margin-left: 5px;
@@ -66,11 +66,8 @@
     color: #f13983;
 }
 .ui-page-filter__right__actions__action--active > .ui-page-filter__right__actions__action__icon{
-    background: #f13983;
+    /* background: #f13983; */
 }
 .ui-page-filter__right__more{
     margin-left: 22px;
-    width: 10px;
-    height: 10px;
-    background: #87879c;
 }

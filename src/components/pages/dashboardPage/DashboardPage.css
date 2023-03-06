@@ -27,7 +27,7 @@
 }
 
 @media (max-width: 768px) {
-    .ui-dashboard-page__main{
+    .ui-dashboard-page-body__main{
         width: 100%;
     }
 }
