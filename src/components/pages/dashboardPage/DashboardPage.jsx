@@ -17,7 +17,7 @@ const _DashboardPage = (props) => {
             </div>
             <div className='ui-dashboard-page-body'>
                 <SidebarNav {...props}/>
-                <div className='ui-dashboard-page-body__main'>
+                <div className='ui-dashboard-page-body-main'>
                     <div className='ui-dashboard-page-logout-btn'>
                         <button onClick={() => logout()}  > Logout </button>
                     </div>

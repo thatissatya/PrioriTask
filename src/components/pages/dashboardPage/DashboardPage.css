@@ -22,12 +22,12 @@
 
 }
 
-.ui-dashboard-page-body__main{
+.ui-dashboard-page-body-main{
     width: calc(100% - 240px);
 }
 
 @media (max-width: 768px) {
-    .ui-dashboard-page-body__main{
+    .ui-dashboard-page-body-main{
         width: 100%;
     }
 }
