@@ -49,6 +49,9 @@
 .ui-sidebar-nav__profile__right__username{
     font-size: 12px;
     color: #87879c;
+    max-width: 150px;
+    overflow: hidden;
+    word-break: break-word;
 }
 
 .ui-sidebar-nav__navigation{
