@@ -3,18 +3,26 @@
     /* justify-content: space-between; */
     height: 100%;
     width: 100%;
+    flex-direction: column;
 }
 .ui-dashboard-page-logout-btn{
     text-align: end;
 }
-.ui-dashboard-page-logout-btn button{
+
+.ui-dashboard-page-body{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.ui-dashboard-page-body-logout-btn button{
     height: 60px;
     background-color: purple;
     color: yellow;
 
 }
 
-.ui-dashboard-page__main{
+.ui-dashboard-page-body__main{
     width: calc(100% - 240px);
 }
 
