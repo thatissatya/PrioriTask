@@ -1,6 +1,6 @@
 import React from 'react'
 import './CardTask.css'
-import moreDots from "../../../public/assets/moreDots.svg";
+import Icon from "../../modules/Icon";
 
 const CardTask = (props) =>{
     const {title, tagStatus, tag, image, more, dueDate, status, members } = props;
@@ -10,7 +10,7 @@ const CardTask = (props) =>{
             <div className="ui-card-task-header__tagStatus" style={{backgroundColor: tagStatus}}></div>
             <div className="ui-card-task-header__tagName">{tag}</div>
             <div className="ui-card-task-header__more">
-                <img src={moreDots} alt='' />
+                <Icon id={'moreDots'} iconSize={20}/>
             </div>
         </div>
         <div className="ui-card-task-body">
