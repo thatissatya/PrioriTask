@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import './PageFilter.css'
-import allTasks from "../../../public/assets/allTasks.svg";
-import sort from "../../../public/assets/sort.svg";
-import moreDots from "../../../public/assets/moreDots.svg";
+import Icon from "../../modules/Icon";
 
 const _PageFilter = () => {
     const filterData = {
@@ -11,26 +9,21 @@ const _PageFilter = () => {
             {
                 id: 'allTasks',
                 title: 'All tarks',
-                icon: ''
+                icon: 'allTasks'
             },
             {
                 id: 'sort',
                 title: 'Sort',
-                icon: ''
+                icon: 'sort'
             },
             {
                 id: 'filter',
                 title: 'Filter',
-                icon: ''
+                icon: 'sort'
             }
         ],
         more: true 
     };
-    const icons = {
-        'allTasks': allTasks,
-        'sort': sort,
-        'filter': sort
-      };
     const [selectedAction, setSelectedAction] = useState(null);
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const lastUpdateDate = new Date(filterData.lastUpdateDate);
@@ -47,7 +40,7 @@ const _PageFilter = () => {
                 return (
                     <div className={actionClassName} role={'button'} tabIndex={0} onClick={()=> setSelectedAction(action.id)} key={action.id}>
                         <div className="ui-page-filter__right__actions__action__icon">
-                        <img src={icons[action.id]} alt />
+                        <Icon id={action.icon} iconFill = {isActive && '#f13983'}/>
                         </div>
                         <div className="ui-page-filter__right__actions__action__name">
                             {action.title}
@@ -56,7 +49,7 @@ const _PageFilter = () => {
                 );
             })}</div>
             {filterData.more && <div className="ui-page-filter__right__more">
-                <img src={moreDots} alt />
+                <Icon id={'moreDots'}/>
             </div>}
         </div>
     </div>

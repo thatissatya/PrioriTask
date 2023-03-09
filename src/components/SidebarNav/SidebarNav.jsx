@@ -1,34 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import "./SidebarNav.css";
 import createTask from "../../../public/assets/createTask.svg";
-import dashboard from "../../../public/assets/dashboard.svg";
-import board from "../../../public/assets/board.svg";
-import feed from "../../../public/assets/feed.svg";
-import message from "../../../public/assets/message.svg";
-import members from "../../../public/assets/members.svg";
-import arrowUp from "../../../public/assets/arrowUp.svg";
-import arrowDown from "../../../public/assets/arrowDown.svg";
+import Icon from "../../modules/Icon";
 
 export const SidebarNav = (props) => {
-  const icons = {
-    'dashboard': dashboard,
-    'board': board,
-    'feed': feed,
-    'message': message,
-    'teamMembers': members
-  }
   const [navigation, setNavigation] = useState([
     {
       id: "dashboard",
       title: "Dashboard",
-      icon: dashboard,
+      icon: 'dashboard',
       path: "",
       children: [],
     },
     {
       id: "board",
       title: "Project Board",
-      icon: board,
+      icon: 'board',
       path: "",
       children: [
         {
@@ -48,14 +35,14 @@ export const SidebarNav = (props) => {
     {
       id: "feed",
       title: "Feed",
-      icon: feed,
+      icon: 'feed',
       path: "",
       children: [],
     },
     {
       id: "message",
       title: "Messages",
-      icon: message,
+      icon: 'message',
       path: "",
       count: 7,
       children: [],
@@ -63,7 +50,7 @@ export const SidebarNav = (props) => {
     {
       id: "teamMembers",
       title: "Team members",
-      icon: members,
+      icon: 'members',
       path: "",
       children: [],
     },
@@ -157,7 +144,9 @@ export const SidebarNav = (props) => {
             }
             }>
               <div className="ui-sidebar-nav__navigation__item__main__icon">
-                <img src={icons[navigation.id]} alt />
+                {/* <img src={icons[navigation.id]} alt /> */}
+                <Icon id={navigation.icon} iconFill = {isActive && '#f13983'} />
+                
               </div>
               <div className="ui-sidebar-nav__navigation__item__main__name">
                 {navigation.title}
@@ -169,7 +158,7 @@ export const SidebarNav = (props) => {
               )}
               {!isEmpty(navigation.children) && (
                 <div className="ui-sidebar-nav__navigation__item__main__extends" role='button' tabIndex={'0'} onClick={() => onToggleSubPart({id : navigation.id})} >
-                  {<img src={navigation.open?arrowUp:arrowDown} alt />}
+                  <Icon id={navigation.open?'arrowUp':'arrowDown'} iconFill = {isActive && '#f13983'} />
                 </div>
               )}
             </div>
