@@ -10,17 +10,11 @@ import {
     onAuthStateChanged,
     sendPasswordResetEmail
 } from "firebase/auth";
-
+import { config } from './firebase.key'
 // Initialize Firebase
-const app = initializeApp({
-    apiKey: "AIzaSyCa4WhFdv6sDbBLcaTikPhPsH-YwqPFvHE",
-    authDomain: "priori-task.firebaseapp.com",
-    projectId: "priori-task",
-    storageBucket: "priori-task.appspot.com",
-    messagingSenderId: "228528016918",
-    appId: "1:228528016918:web:053c828e3ea08055ed6f37",
-    measurementId: "G-QWFG9FLQDX"
-});
+const app = initializeApp(
+    config
+);
 
 
 
@@ -61,7 +55,7 @@ const googleAuthentication = () => {
         });
 }
 
-const forgetPassword = async(email, setConfirmation={}) => {
+const forgetPassword = async (email, setConfirmation = {}) => {
     sendPasswordResetEmail(auth, email)
         .then(() => {
             setConfirmation()
