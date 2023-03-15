@@ -3,3 +3,6 @@ node_modules
 node_modules/
 node_modules
 firebase.key.js
+dist
+/dist
+dist/

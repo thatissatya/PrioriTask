@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "prioritask",
     "public": "dist",
     "ignore": [
       "firebase.json",
