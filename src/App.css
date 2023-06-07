@@ -8,6 +8,7 @@ body{
       rgba(41, 56, 76, 0.98) 57.03%,
       rgba(42, 38, 64, 0.98) 83.13%
     );
+    background-repeat: no-repeat;
 }
 
 .ui-app{
